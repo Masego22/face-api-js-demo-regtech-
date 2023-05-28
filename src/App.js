@@ -70,6 +70,9 @@ function App() {
         // Using Euclidean distance to comapare face descriptions
         const distance = faceapi.euclideanDistance(idCardFacedetection.descriptor, selfieFacedetection.descriptor);
         console.log(distance);
+        if(distance <= 0.55){
+          console.log("Face Matched");
+        }
       }
 
     })();
@@ -78,11 +81,11 @@ function App() {
   return (
     <>
       <div className="gallery">
-        <img ref={idCardRef} src={require('./images/id-card.png')} alt="ID card" height="auto" />
+        <img ref={idCardRef} src={require('./images/img1.JPG')} alt="ID card" height="auto" />
       </div>
 
       <div className="gallery">
-        <img ref={selfieRef} src={require('./images/selfie.webp')} alt="Selfie" height="auto" />
+        <img ref={selfieRef} src={require('./images/img3.jpg')} alt="Selfie" height="auto" />
       </div>
     </>
   );
